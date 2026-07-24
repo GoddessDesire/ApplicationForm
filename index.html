@@ -134,21 +134,22 @@
     const successPage = document.getElementById('successPage');
 
     form.addEventListener('submit', async function(e) {
-      e.preventDefault(); // Stop normal submission
+      e.preventDefault();           // This stops the redirect completely
 
       const formData = new FormData(form);
-      
+
       try {
+        // Send the data
         await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           body: formData
         });
-        
-        // Show success page
+
+        // Immediately show success page
         formPage.classList.add('hidden');
         successPage.classList.remove('hidden');
-      } catch (error) {
-        alert("Something went wrong. Please try again.");
+      } catch (err) {
+        alert("Error submitting form. Please try again.");
       }
     });
   </script>
