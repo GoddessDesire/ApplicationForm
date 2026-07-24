@@ -13,7 +13,7 @@
   </style>
 </head>
 <body class="text-zinc-200">
-  
+<div id="formPage">  
   <div class="hero-bg h-screen flex items-center justify-center relative" style="background-image: url('./images/hero.jfif');">
     <div class="absolute inset-0 bg-black/70"></div>
     <div class="relative text-center z-10 px-6">
@@ -110,7 +110,7 @@
       </form>
     </div>
   </div>
-
+</div>
    <!-- Success Page -->
   <div id="successPage" class="hidden min-h-screen flex items-center justify-center px-6">
     <div class="text-center max-w-lg">
@@ -134,7 +134,6 @@
     const successPage = document.getElementById('successPage');
 
     form.addEventListener('submit', function(e) {
-      // Let the form submit to Web3Forms first
       setTimeout(() => {
         formPage.classList.add('hidden');
         successPage.classList.remove('hidden');
