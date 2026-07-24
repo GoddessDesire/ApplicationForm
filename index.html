@@ -9,79 +9,107 @@
   <style>
     body { background: linear-gradient(135deg, #0a0a0a 0%, #1a0f1f 100%); }
     .hero-bg { background-size: cover; background-position: center; background-attachment: fixed; }
-    .card { background: rgba(15, 15, 15, 0.95); }
+    .card { background: rgba(15, 15, 15, 0.97); }
   </style>
 </head>
 <body class="text-zinc-200">
   
-  <!-- Hero Photo -->
-  <div class="hero-bg h-screen flex items-center justify-center relative" 
-       style="background-image: url('./images/hero.jfif');">
+  <div class="hero-bg h-screen flex items-center justify-center relative" style="background-image: url('./images/hero.jfif');">
     <div class="absolute inset-0 bg-black/70"></div>
     <div class="relative text-center z-10 px-6">
-      <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-4">Goddess Desire</h1>
-      <p class="text-2xl text-purple-300">Sub/Session Application</p>
+      <h1 class="text-5xl md:text-6xl font-bold tracking-tight">Goddess Desire</h1>
+      <p class="text-2xl text-purple-300 mt-2">Sub / Session Application</p>
     </div>
   </div>
 
-  <div class="max-w-2xl mx-auto py-12 px-6">
-    <div class="card rounded-3xl shadow-2xl p-10 md:p-12 border border-purple-950">
+  <div class="max-w-3xl mx-auto py-12 px-6">
+    <div class="card rounded-3xl p-10 md:p-12 border border-purple-950">
       
-      <div class="prose prose-invert max-w-none mb-10 text-lg">
-        <p>This form is for intentional requests only. My kinks & sessions available virtually & in person: 🫦SPH, JOI / CHASITY, Foot worship, Goddess Worship / PUPPY, Cuckhold, Findom / Service / Gifting, Ass Smothering & FEM BOY/CROSS DRESSING!</p>
-        <p>You’re at the point where I can move you forward if you’re ready. All experiences are handled privately, with structure and mutual understanding. Submitting this form does not guarantee acceptance.</p>
-        <p class="text-amber-400 font-semibold">$50 USD Tribute Required with this form. (FORM WILL BE DISREGARDED IF NOT PAID)</p>
+      <div class="prose prose-invert max-w-none mb-10">
+        <p>This form is for intentional requests only. My kinks & sessions available virtually & in person: SPH, JOI / CHASITY, Foot worship, Goddess Worship / PUPPY, Cuckhold, Findom / Service / Gifting, Ass Smothering & FEM BOY/CROSS DRESSING! You’re at the point where I can move you forward if you’re ready. All experiences are handled privately, with structure and mutual understanding. Submitting this form does not guarantee acceptance. <strong>$50 USD Tribute Required with this form. (FORM WILL BE DISREGARDED IF NOT PAID)</strong></p>
       </div>
 
       <form id="applicationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
         <input type="hidden" name="access_key" value="b3bfe6a0-8dd2-45ca-a24d-72f5fb102860">
 
-        <!-- Exact original question 1 -->
-        <div>
-          <label class="block text-sm uppercase tracking-widest mb-2 font-medium">
-            What are your desired kinks/fetishes? What are you looking to experience with Goddess?
-          </label>
-          <textarea name="kinks_experience" rows="6" 
-            class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-purple-500" 
-            placeholder="Be detailed..." required></textarea>
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <label>State Your Name: <span class="text-red-500">*</span></label>
+            <input type="text" name="name" required class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-3 mt-2">
+          </div>
+          <div>
+            <label>State your age & social media name (Telegram, X or IG): <span class="text-red-500">*</span></label>
+            <input type="text" name="age_social" required class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-3 mt-2">
+          </div>
         </div>
 
-        <!-- Exact original question 2 -->
         <div>
-          <label class="block text-sm uppercase tracking-widest mb-2 font-medium">
-            WHICH PAYMENT METHOD WOULD YOU LIKE TO USE FOR YOUR $50 USD TRIBUTE & $222 USD SESSION DEPOSIT?
-          </label>
-          <select name="payment_method" 
-            class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-purple-500" 
-            required>
-            <option value="">Select payment method...</option>
-            <option value="Cash App">Cash App</option>
-            <option value="Venmo">Venmo</option>
-            <option value="PayPal">PayPal</option>
-            <option value="Crypto">Crypto</option>
-            <option value="Other">Other</option>
+          <label>Contact email: <span class="text-red-500">*</span></label>
+          <input type="email" name="email" required class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-3 mt-2">
+        </div>
+
+        <div>
+          <label>What location are you interested in for your session? ATL BASED (ALL Non Local In person Sessions must be requested 2 weeks in advance.) <span class="text-red-500">*</span></label>
+          <input type="text" name="location" required class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-3 mt-2">
+        </div>
+
+        <div>
+          <label>ID Screening: Would you rather pay for a nonkink video call to show ID: $25 USD or NO CHARGE to send a clear picture of your ID? <span class="text-red-500">*</span></label>
+          <select name="id_screening" required class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-3 mt-2">
+            <option value="">Select option...</option>
+            <option value="$25 Video Call">$25 USD Nonkink Video Call</option>
+            <option value="Send ID Photo">Send Clear Picture of ID (No Charge)</option>
           </select>
         </div>
 
-        <button type="submit" 
-          class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 py-6 rounded-2xl font-semibold text-lg tracking-wider">
+        <!-- Kink Packages -->
+        <div>
+          <label class="block mb-3">What are your desired kinks/fetishes? What are you looking to experience with Goddess? $222 USD DEPOSIT REQUIRED FOR ALL IN PERSON SESSIONS</label>
+          <div class="space-y-3 bg-black/40 p-5 rounded-2xl border border-zinc-700">
+            <label class="flex items-center gap-3"><input type="checkbox" name="packages" value="111 JOI"> $111 10 MINS JOI (Virtual Only)</label>
+            <label class="flex items-center gap-3"><input type="checkbox" name="packages" value="111 Weekly"> $111 WEEKLY Trained & Owned</label>
+            <label class="flex items-center gap-3"><input type="checkbox" name="packages" value="Service Sub"> SERVICE SUB (graphics, chauffeur, etc)</label>
+            <label class="flex items-center gap-3"><input type="checkbox" name="packages" value="Custom Order"> $111 CUSTOM ORDER</label>
+            <label class="flex items-center gap-3"><input type="checkbox" name="packages" value="333 GF"> $333 PER DAY (GF Experience)</label>
+            <label class="flex items-center gap-3"><input type="checkbox" name="packages" value="555 Cash Meet"> $555 Minimum Cash Meet Local</label>
+            <!-- Add more as needed -->
+          </div>
+        </div>
+
+        <div>
+          <label>WHICH PAYMENT METHOD WOULD YOU LIKE TO USE FOR YOUR $50 USD TRIBUTE & $222 USD SESSION DEPOSIT? <span class="text-red-500">*</span></label>
+          <div class="space-y-2 mt-3">
+            <label class="flex items-center gap-3"><input type="radio" name="payment" value="Cashapp"> Cashapp - $lethuggish</label>
+            <label class="flex items-center gap-3"><input type="radio" name="payment" value="Venmo"> Venmo / Apple Pay / Debit</label>
+            <label class="flex items-center gap-3"><input type="radio" name="payment" value="Throne"> Throne Link</label>
+          </div>
+        </div>
+
+        <div>
+          <label>Why should I allow you to serve me? <span class="text-red-500">*</span></label>
+          <textarea name="why_serve" rows="4" class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4" required></textarea>
+        </div>
+
+        <div>
+          <label>Tell me your HARD LIMITS clearly. Have you ever sessioned with a domme before? Trauma triggers? <span class="text-red-500">*</span></label>
+          <textarea name="limits" rows="4" class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4" required></textarea>
+        </div>
+
+        <div>
+          <label>Upload proof of $50 Tribute <span class="text-red-500">*</span></label>
+          <input type="file" name="tribute_proof" class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4">
+        </div>
+
+        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 py-6 rounded-2xl text-lg font-semibold">
           SUBMIT APPLICATION
         </button>
       </form>
     </div>
-
-    <!-- Gallery -->
-    <div class="mt-12">
-      <h2 class="text-center text-xl font-medium mb-6 text-purple-300">Gallery</h2>
-      <div class="grid grid-cols-2 gap-4">
-        <img src="images/photo1.jfif" class="rounded-2xl shadow-xl" alt="">
-      </div>
-    </div>
   </div>
 
   <script>
-    document.getElementById('applicationForm').addEventListener('submit', function() {
-      setTimeout(() => alert("Application received. Goddess will review it after tribute confirmation."), 600);
+    document.getElementById('applicationForm').addEventListener('submit', () => {
+      setTimeout(() => alert("Application submitted successfully. Goddess will review after tribute confirmation."), 600);
     });
   </script>
 </body>
