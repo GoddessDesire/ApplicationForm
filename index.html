@@ -111,10 +111,36 @@
     </div>
   </div>
 
+   <!-- Success Page -->
+  <div id="successPage" class="hidden min-h-screen flex items-center justify-center px-6">
+    <div class="text-center max-w-lg">
+      <div class="text-6xl mb-6">✅</div>
+      <h1 class="text-4xl font-bold mb-4">Application Received</h1>
+      <p class="text-xl text-purple-300 mb-8">
+        Thank you. Goddess will review your application after the tribute is confirmed.
+      </p>
+      <p class="text-zinc-400">You will be contacted if selected.</p>
+      
+      <button onclick="window.location.reload()" 
+        class="mt-10 px-8 py-4 bg-zinc-800 hover:bg-zinc-700 rounded-2xl font-medium">
+        Submit Another Application
+      </button>
+    </div>
+  </div>
+
   <script>
-    document.getElementById('applicationForm').addEventListener('submit', () => {
-      setTimeout(() => alert("Application submitted successfully. Goddess will review after tribute confirmation."), 600);
+    const form = document.getElementById('applicationForm');
+    const formPage = document.getElementById('formPage');
+    const successPage = document.getElementById('successPage');
+
+    form.addEventListener('submit', function(e) {
+      // Let the form submit to Web3Forms first
+      setTimeout(() => {
+        formPage.classList.add('hidden');
+        successPage.classList.remove('hidden');
+      }, 800);
     });
   </script>
 </body>
 </html>
+
