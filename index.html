@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Goddess [NAME] • Private Application</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    body { background: linear-gradient(135deg, #0a0a0a 0%, #1a0f1f 100%); }
+    .hero-bg {
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+    .card { background: rgba(15, 15, 15, 0.95); }
+  </style>
+</head>
+<body class="text-zinc-200">
+  <!-- Hero Section with Photo -->
+  <div class="hero-bg h-screen flex items-center justify-center relative" 
+       style="background-image: url('https://your-photo-link-here.jpg');">
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="relative text-center z-10 px-6">
+      <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-4">Goddess Desire</h1>
+      <p class="text-2xl text-purple-300">Private Session Application</p>
+    </div>
+  </div>
+
+  <div class="max-w-2xl mx-auto py-12 px-6">
+    <div class="card rounded-3xl shadow-2xl p-8 md:p-12 border border-purple-950">
+      
+      <div class="prose prose-invert max-w-none mb-10">
+        <p class="text-lg leading-relaxed">
+          This form is for serious, intentional requests only. All experiences are handled privately with structure and mutual understanding.
+        </p>
+        <p class="text-amber-400 font-medium mt-6 flex items-center gap-2">
+          <i class="fas fa-exclamation-triangle"></i> 
+          $50 USD Tribute Required — Form will be disregarded without payment.
+        </p>
+      </div>
+
+      <form id="applicationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+        <input type="hidden" name="access_key" value="b3bfe6a0-8dd2-45ca-a24d-72f5fb102860">
+
+        <div>
+          <label class="block text-sm uppercase tracking-widest mb-2">Desired Kinks & Fetishes</label>
+          <textarea name="kinks" rows="4" class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-purple-500" placeholder="List them in detail..." required></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm uppercase tracking-widest mb-2">What do you wish to experience with Goddess?</label>
+          <textarea name="experience" rows="4" class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-purple-500" required></textarea>
+        </div>
+
+        <div>
+          <label class="block text-sm uppercase tracking-widest mb-2">Preferred Payment Method (Tribute + Deposit)</label>
+          <select name="payment_method" class="w-full bg-black/60 border border-zinc-700 rounded-2xl px-5 py-4 focus:outline-none focus:border-purple-500" required>
+            <option value="">Choose method...</option>
+            <option value="Cash App">Cash App</option>
+            <option value="Venmo">Venmo</option>
+            <option value="PayPal">PayPal</option>
+            <option value="Crypto">Crypto</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <button type="submit" 
+          class="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all py-6 rounded-2xl font-semibold text-lg tracking-wider">
+          SUBMIT APPLICATION
+        </button>
+      </form>
+    </div>
+
+    <!-- Optional Photo Gallery -->
+    <div class="mt-12">
+      <h2 class="text-center text-xl font-medium mb-6 text-purple-300">Gallery</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <!-- Add more images here -->
+        <img src="https://your-second-photo-link-here.jpg" class="rounded-2xl shadow-xl" alt="">
+        <img src="https://your-third-photo-link-here.jpg" class="rounded-2xl shadow-xl" alt="">
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('applicationForm').addEventListener('submit', function() {
+      setTimeout(() => alert("Thank you. Your application has been received."), 600);
+    });
+  </script>
+</body>
+</html>
