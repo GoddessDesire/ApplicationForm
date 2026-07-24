@@ -29,11 +29,9 @@
         <p>This form is for intentional requests only. My kinks & sessions available virtually & in person: SPH, JOI / CHASITY, Foot worship, Goddess Worship / PUPPY, Cuckhold, Findom / Service / Gifting, Ass Smothering & FEM BOY/CROSS DRESSING! You’re at the point where I can move you forward if you’re ready. All experiences are handled privately, with structure and mutual understanding. Submitting this form does not guarantee acceptance. <strong>$50 USD Tribute Required with this form. (FORM WILL BE DISREGARDED IF NOT PAID)</strong></p>
       </div>
 
-      <form id="applicationForm" action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
+      <form id="applicationForm" class="space-y-8">
         <input type="hidden" name="access_key" value="b3bfe6a0-8dd2-45ca-a24d-72f5fb102860">
         <input type="hidden" name="subject" value="New Session Application">
-        <input type="hidden" name="redirect" value="">
-
         <div class="grid md:grid-cols-2 gap-6">
           <div>
             <label>State Your Name: <span class="text-red-500">*</span></label>
@@ -135,11 +133,23 @@
     const formPage = document.getElementById('formPage');
     const successPage = document.getElementById('successPage');
 
-    form.addEventListener('submit', function(e) {
-      setTimeout(() => {
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault(); // Stop normal submission
+
+      const formData = new FormData(form);
+      
+      try {
+        await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: formData
+        });
+        
+        // Show success page
         formPage.classList.add('hidden');
         successPage.classList.remove('hidden');
-      }, 800);
+      } catch (error) {
+        alert("Something went wrong. Please try again.");
+      }
     });
   </script>
 </body>
